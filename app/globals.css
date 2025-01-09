@@ -2,16 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes pulse-purple {
-  0%, 100% {
-    color: rgb(147, 51, 234); /* Purple-600 */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
   }
-  50% {
-    color: rgb(192, 132, 252); /* Purple-400 */
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
   }
 }
 
-.animate-pulse-purple {
-  animation: pulse-purple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+@keyframes glitch-color {
+  0% {
+    color: #ff00ea;
+  }
+  33% {
+    color: #00fff0;
+  }
+  66% {
+    color: #ff00ea;
+  }
+  100% {
+    color: #00fff0;
+  }
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 500ms infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: '.new';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  color: #ff00ea;
+  z-index: -1;
+  animation: glitch 500ms infinite reverse, glitch-color 3s infinite;
+}
+
+.glitch::after {
+  color: #00fff0;
+  z-index: -2;
+  animation: glitch 375ms infinite, glitch-color 3s infinite reverse;
 }
 

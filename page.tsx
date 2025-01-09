@@ -5,9 +5,9 @@ export default function Page(): React.JSX.Element {
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-between p-8">
       {/* Main content */}
       <div className="flex-1 flex items-center justify-center">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tighter">
           cursor
-          <span className="animate-pulse-purple">.new</span>
+          <span className="glitch inline-block">.new</span>
         </h1>
       </div>
 
