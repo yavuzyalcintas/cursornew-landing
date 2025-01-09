@@ -1,4 +1,5 @@
 import React from "react";
+import Particles from "./components/ui/particles";
 
 export default function Page(): React.JSX.Element {
   return (
@@ -23,6 +24,12 @@ export default function Page(): React.JSX.Element {
           myavuzyalcintas@gmail.com
         </a>
       </div>
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={1000}
+        color="#ffffff"
+        refresh
+      />
     </main>
   );
 }
