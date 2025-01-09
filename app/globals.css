@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-purple {
+  0%, 100% {
+    color: rgb(147, 51, 234); /* Purple-600 */
+  }
+  50% {
+    color: rgb(192, 132, 252); /* Purple-400 */
+  }
+}
+
+.animate-pulse-purple {
+  animation: pulse-purple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
